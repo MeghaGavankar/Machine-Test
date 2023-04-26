@@ -1,0 +1,114 @@
+<!-- <p>profile works!</p> -->
+<!-- Button trigger modal -->
+{{final}} 
+
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editData(final)">
+    Edit
+      </button>
+
+
+<!-- <input  hidden type="file" #profileUpload (change)="imaageUpload($event)" class="form-control" id="exampleInputfirstname1"  aria-describedby="emailHelp"  name="firstname"    formControlName="firstname" placeholder="What is your name?">
+             <button (click)="profileUpload.click()">
+            Upload your photo
+             </button>  -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form  [formGroup]="editing" style="margin-top:10px; margin-left:20px;">
+       
+            <div class="form-group">
+              <label for="exampleInputEmail1" id="label">First Name</label>
+    <input type="text" class="form-control" id="exampleInputfirstname"
+[class.is-invalid]="firstname && firstname.invalid && firstname.touched" name="firstname"
+                formControlName="firstname" >
+              <p class="text-danger" *ngIf="firstname && firstname.invalid && firstname.touched">only alphabetic character
+                and length shold not exceed than 20 character</p>
+  
+            </div>
+            <div class="form-group">
+              <label for="exampleInputLastname" id="label">Last Name</label>
+              <input type="text" class="form-control" id="exampleInputLastname" name="lastname" formControlName="lastname"
+                required>
+  
+  
+            </div>
+  
+            <div class="form-group">
+              <label for="exampleInputEmail" id="label">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail" name="email" formControlName="email"
+               >
+  
+            </div>
+            <div class="form-group">
+              <label for="exampleInputMobile" id="label">Mobile Number</label>
+              <input type="text" class="form-control" id="exampleInputMobile" name="mobile" formControlName="mobile"
+                >
+  
+            </div>
+            <div class="form-group">
+              <label for="exampleInputAge" id="label">Age</label>
+              <ngx-slider [(value)]="value" [options]="options" name="age" formControlName="age"></ngx-slider>
+            </div>
+  
+            <div class="form-group">
+              <label for="exampleInputState" id="label">State</label>
+              <input type="text" class="form-control" id="exampleInputState" name="state" formControlName="state">
+  
+  
+            </div>
+            <div class="form-group">
+              <label for="exampleInputCountry" id="label">Country</label>
+              <input type="text" class="form-control" id="exampleInputCountry" name="country" formControlName="country">
+  
+  
+            </div>
+            <p>
+              <a class="btn btn-primary" id="label-btn1" data-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                Address
+              </a>
+  
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <div class="form-group">
+                  <label id="label" for="exampleInputHomeAdd">Home address</label>
+                  <input type="text" class="form-control" id="exampleInputHomeAdd" name="homeadd"
+                    formControlName="homeadd">
+  
+                </div>
+                <div class="form-group">
+                  <label id="label" for="exampleInputComAdd">Company address</label>
+                  <input type="text" class="form-control" id="exampleInputComAdd" name="comadd" formControlName="comadd">
+  
+                </div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="exampleInputTags" id="label">Tags</label>
+              <input type="text" class="form-control" id="exampleInputTags" name="tags" formControlName="tags">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" (click)="Update()">Save</button>
+        </form>           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img [src]="url ? url : 'https://www.google.com/howto/img_avatar.png'"> <br/>
+<input type='file' (change)="onSelectFile($event)">

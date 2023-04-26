@@ -1,0 +1,137 @@
+<!-- <p>home works!</p> -->
+<div id="cont1">
+
+  <h2>I'm looking for..</h2>
+  <form id="search-form" class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button id="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  <button type="button" class="btn btn-primary" id="register-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Register
+  </button>
+</div>
+<div id="cont2">
+<h4>Creative Digital Recruitment</h4>
+<p>Based in surry Hills,the creative hub of Sydney we are surrounded by creativity and that reflects on the type of jobs we recruit for.</p>
+<button>FIND OUT MORE ABOUT US</button>
+</div>
+
+<div id="cont3">
+  <h4>Subscribe to our Job seeker Mailing List</h4>
+  <button>Enter Your Email Address</button>
+
+</div>
+
+<div id="cont4">
+<h5>Copyright @2014 Two Bytes Consulting Terms & Policies.</h5>
+</div>
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="modal-title" id="exampleModalLabel" routerLink="profile">Register</button>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerform" (ngSubmit)="save(registerform.value)">
+
+          <div class="image-container">
+            <img [src]="profile" height="100px" alt="profileDp">
+            <input type="file" (change)="onselectfile($event)">
+
+          </div>
+         
+
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1" id="label">First Name</label>
+            <input type="text" class="form-control" id="exampleInputfirstname"
+              [class.is-invalid]="firstname && firstname.invalid && firstname.touched" name="firstname"
+              formControlName="firstname" placeholder="What is your name?">
+            <p class="text-danger" *ngIf="firstname && firstname.invalid && firstname.touched">only alphabetic character
+              and length shold not exceed than 20 character</p>
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputLastname" id="label">Last Name</label>
+            <input type="text" class="form-control" id="exampleInputLastname" name="lastname" formControlName="lastname"
+              placeholder="What is Last name?" required>
+
+
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail" id="label">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail" name="email" formControlName="email"
+              placeholder="Tell us your Email ID">
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputMobile" id="label">Mobile Number</label>
+            <input type="text" class="form-control" id="exampleInputMobile" name="mobile" formControlName="mobile"
+              placeholder="Enter Mobile Number">
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputAge" id="label">Age</label>
+            <ngx-slider [(value)]="value" [options]="options" name="age" formControlName="age"></ngx-slider>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputState" id="label">State</label>
+            <input type="text" class="form-control" id="exampleInputState" name="state" formControlName="state">
+
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputCountry" id="label">Country</label>
+            <input type="text" class="form-control" id="exampleInputCountry" name="country" formControlName="country">
+
+
+          </div>
+          <p>
+            <a class="btn btn-primary" id="label-btn1" data-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">
+              Address
+            </a>
+
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <div class="form-group">
+                <label id="label" for="exampleInputHomeAdd">Home address</label>
+                <input type="text" class="form-control" id="exampleInputHomeAdd" name="homeadd"
+                  formControlName="homeadd">
+
+              </div>
+              <div class="form-group">
+                <label id="label" for="exampleInputComAdd">Company address</label>
+                <input type="text" class="form-control" id="exampleInputComAdd" name="comadd" formControlName="comadd">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputTags" id="label">Tags</label>
+            <input type="text" class="form-control" id="exampleInputTags" name="tags" formControlName="tags">
+          </div>
+
+          <button id="label" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+     </div>
+    </div>
+  </div>
+</div>
+<!-- {{final | json}} -->

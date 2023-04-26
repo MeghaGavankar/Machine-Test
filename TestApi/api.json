@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "profile":"assets/profile.jpg",
+      "firstname": "MEGHA",
+      "lastname": "India",
+      "email": "megha@gmail.com",
+      "mobile": "07769967004",
+      "age": "25",
+      "state": "Maharashtra",
+      "country": "India",
+      "homeadd": "407,om sai dutta apartment,nana nani park",
+      "conadd": "408,om sai dutta apartment,nana nani park",
+      "tags": "hocky",
+      "id": 1
+    },
+    { 
+      "profile":"assets/photo.jpg",
+      "firstname": "MEGHA",
+      "lastname": "India",
+      "email": "megha2@gmail.com",
+      "mobile": "07769967004",
+      "age": "99",
+      "state": "Maharashtra",
+      "country": "India",
+      "homeadd": "407,om sai dutta apartment,nana nani park",
+      "conadd": "408,om sai dutta apartment,nana nani park",
+      "tags": "hocky",
+      "id": 2
+    }
+    
+  ]
+}
