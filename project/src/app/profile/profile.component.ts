@@ -36,18 +36,24 @@ export class ProfileComponent {
    })   
    
    userid:any;
-EditUser(id:any){
-  this.userid=id;
+EditData(final:any){
+  this.userid=final.id;
   this.http.get<any>("http://localhost:3000/user").subscribe(res=>{
   const user=res.find((a:any)=>{
     return a.id==this.userid;
   });
-  if(user){
+  if(final){
 alert("edit now...");
-this.editing.controls.username.setValue(user.username);
-this.editing.controls.email.setValue(user.email);
- 
- this.editing.controls.edu.setValue(user.edu);
+this.editing.controls.firstname.setValue(final.firstname);
+this.editing.controls.lastname.setValue(final.lastname);
+this.editing.controls.email.setValue(final.email);
+this.editing.controls.mobile.setValue(final.mobile);
+this.editing.controls.age.setValue(final.age);
+this.editing.controls.state.setValue(final.state);
+this.editing.controls.country.setValue(final.country);
+this.editing.controls.homeadd.setValue(final.homeadd);
+this.editing.controls.comadd.setValue(final.comadd);
+this.editing.controls.tags.setValue(final.tags);
   }
   else{
     alert(" values not available!!!");
@@ -55,10 +61,7 @@ this.editing.controls.email.setValue(user.email);
   });
 }
 
-editData(final:any)
-{
-  this.editing.controls.email.setValue(final.email);
-}
+
 
 Update(){
   this.userService.UpdateUser(this.editing.value,this.final.id).subscribe(res=>{
