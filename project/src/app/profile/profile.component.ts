@@ -21,6 +21,7 @@ export class ProfileComponent {
   }
 
   editing=new FormGroup({
+    profile:new FormControl(),
    firstname: new FormControl(),
    lastname: new FormControl(),
    email: new FormControl(),
@@ -31,7 +32,7 @@ export class ProfileComponent {
     homeadd:new FormControl(),
     comadd:new FormControl(),
   tags:new FormControl(),
-   profile:new FormControl(),
+
   
    })   
    
