@@ -47,7 +47,8 @@ export class HomeComponent {
     age: new FormControl('',Validators.required),
     state: new FormControl('',Validators.required),
    country:new FormControl('',Validators.required),
-   address:new FormControl('',Validators.required),
+  homeadd:new FormControl('',Validators.required),
+ comadd:new FormControl('',Validators.required),
     tags:new FormControl('',Validators.required),
   
   

@@ -21,6 +21,7 @@ export class ProfileComponent {
   }
 
   editing=new FormGroup({
+    profile:new FormControl(),
    firstname: new FormControl(),
    lastname: new FormControl(),
    email: new FormControl(),
@@ -31,10 +32,11 @@ export class ProfileComponent {
    address:new FormControl(),
     
   tags:new FormControl(),
-   profile:new FormControl(),
+
   
    })   
    
+<<<<<<< HEAD
 
 editData(final:any)
 { 
@@ -50,6 +52,35 @@ editData(final:any)
   
   
 }
+=======
+   userid:any;
+EditData(final:any){
+  this.userid=final.id;
+  this.http.get<any>("http://localhost:3000/user").subscribe(res=>{
+  const user=res.find((a:any)=>{
+    return a.id==this.userid;
+  });
+  if(final){
+alert("edit now...");
+this.editing.controls.firstname.setValue(final.firstname);
+this.editing.controls.lastname.setValue(final.lastname);
+this.editing.controls.email.setValue(final.email);
+this.editing.controls.mobile.setValue(final.mobile);
+this.editing.controls.age.setValue(final.age);
+this.editing.controls.state.setValue(final.state);
+this.editing.controls.country.setValue(final.country);
+this.editing.controls.homeadd.setValue(final.homeadd);
+this.editing.controls.comadd.setValue(final.comadd);
+this.editing.controls.tags.setValue(final.tags);
+  }
+  else{
+    alert(" values not available!!!");
+  }
+  });
+}
+
+
+>>>>>>> 62f051fb2e833e570cd54f5ddee99400f9ab36f6
 
 get firstname()
     {
