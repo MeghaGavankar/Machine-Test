@@ -11,9 +11,10 @@
   </button>
 </div>
 <div id="cont2">
-<h4>Creative Digital Recruitment</h4>
-<p>Based in surry Hills,the creative hub of Sydney we are surrounded by creativity and that reflects on the type of jobs we recruit for.</p>
-<button>FIND OUT MORE ABOUT US</button>
+  <h4>Creative Digital Recruitment</h4>
+  <p>Based in surry Hills,the creative hub of Sydney we are surrounded by creativity and that reflects on the type of
+    jobs we recruit for.</p>
+  <button>FIND OUT MORE ABOUT US</button>
 </div>
 
 <div id="cont3">
@@ -23,7 +24,7 @@
 </div>
 
 <div id="cont4">
-<h5>Copyright @2014 Two Bytes Consulting Terms & Policies.</h5>
+  <h5>Copyright @2014 Two Bytes Consulting Terms & Policies.</h5>
 </div>
 
 
@@ -36,21 +37,25 @@
     <div class="modal-content">
       <div class="modal-header">
         <button class="modal-title" id="exampleModalLabel" routerLink="profile">Register</button>
-        
+
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form [formGroup]="registerform" (ngSubmit)="save(registerform.value)">
 
+
+
+
           <div class="image-container">
-            <img [src]="profile" height="100px" alt="profileDp">
-            <input type="file" (change)="onselectfile($event)">
+            <img [src]="profile" alt="profileDp">
+            <input hidden type="file" #profileUpload (change)="ImageUpload($event)">
+            <button (click)="profileUpload.click()">
+              Change image
+            </button>
+
 
           </div>
-         
 
-
-          </div>
           <div class="form-group">
             <label for="exampleInputEmail1" id="label">First Name</label>
             <input type="text" class="form-control" id="exampleInputfirstname"
@@ -82,7 +87,8 @@
           </div>
           <div class="form-group">
             <label for="exampleInputAge" id="label">Age</label>
-            <ngx-slider [(value)]="value" [options]="options" name="age" formControlName="age"></ngx-slider>
+            <input type="text" class="form-control" id="exampleInputMobile" name="age" formControlName="age"
+              placeholder="Enter age">
           </div>
 
           <div class="form-group">
@@ -97,28 +103,13 @@
 
 
           </div>
-          <p>
-            <a class="btn btn-primary" id="label-btn1" data-toggle="collapse" href="#collapseExample" role="button"
-              aria-expanded="false" aria-controls="collapseExample">
-              Address
-            </a>
 
-          </p>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-              <div class="form-group">
-                <label id="label" for="exampleInputHomeAdd">Home address</label>
-                <input type="text" class="form-control" id="exampleInputHomeAdd" name="homeadd"
-                  formControlName="homeadd">
-
-              </div>
-              <div class="form-group">
-                <label id="label" for="exampleInputComAdd">Company address</label>
-                <input type="text" class="form-control" id="exampleInputComAdd" name="comadd" formControlName="comadd">
-
-              </div>
-            </div>
+          <div class="form-group">
+            <label for="exampleInputTags" id="label">Address</label>
+            <input type="text" class="form-control" id="exampleInputTags" name="address" formControlName="address">
           </div>
+
+
 
           <div class="form-group">
             <label for="exampleInputTags" id="label">Tags</label>
@@ -126,12 +117,12 @@
           </div>
 
           <button id="label" type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-     </div>
-    </div>
-  </div>
-</div>
-<!-- {{final | json}} -->
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
+
+
+
+          {{final | json}}

@@ -11,7 +11,7 @@ import{HttpClientModule} from '@angular/common/http';
 import { UserService } from './user.service';
 
 import { HomeComponent } from './home/home.component';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
+// import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 
 
@@ -20,7 +20,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     AppComponent,
     ProfileComponent,
    HomeComponent,
-   NgxSliderModule,
+  //  NgxSliderModule,
   
   ],
   imports: [

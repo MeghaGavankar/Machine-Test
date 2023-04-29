@@ -21,7 +21,7 @@ export class UserService {
    }
 
    UpdateUser(data:any,id:any){
-    return this.http.put("http://localhost:3000/user/"+id,data);
+    return this.http.put("http://localhost:3000/users/"+id,data);
   }
   
 

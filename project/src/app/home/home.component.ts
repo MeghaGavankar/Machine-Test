@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, Subscriber } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../user.service';
-import {  RxReactiveFormsModule } from "@rxweb/reactive-form-validators"
+
 
 @Component({
   selector: 'app-home',
@@ -12,11 +12,11 @@ import {  RxReactiveFormsModule } from "@rxweb/reactive-form-validators"
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  value: number = 100;
-  options: Options = {
-    floor: 0,
-    ceil: 200
-  };
+  // value: number = 100;
+  // options: Options = {
+  //   floor: 0,
+  //   ceil: 200
+  // };
  
   final:any;
   
@@ -31,9 +31,9 @@ export class HomeComponent {
     
 
   }
-  getData() {
-    throw new Error('Method not implemented.');
-  }
+  // getData() {
+  //   throw new Error('Method not implemented.');
+  // }
 
 
 
@@ -76,17 +76,17 @@ export class HomeComponent {
 } 
     profile:any;
    ngOnInit():void{
-    this.profile='assets/profile.jpg'
+    this.profile='/assets/profile.jpg'
    }
   
-   onselectfile(e:any){
-    if(e.taget.files){
-      var reader=new FileReader();
-      reader.readAsDataURL(e.taget.files[0]);
-      reader.onload=(event:any){
-        this.profile=event.target.user
-      }
-    }
+  //  onselectfile(e:any){
+  //   if(e.taget.files){
+  //     var reader=new FileReader();
+  //     reader.readAsDataURL(e.taget.files[0]);
+  //     reader.onload=(event:any){=>
+  //       this.profile=event.target.user
+  //     }
+  //   }
 
     
     
@@ -104,11 +104,14 @@ export class HomeComponent {
    
     
      
+    ImageUpload(event:any):void{
 
+    }
 
       
 }
-}
+
+
 
 function getData() {
   throw new Error('Function not implemented.');
